@@ -1,9 +1,9 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
-const employee = require("./memberRoles/employee");
-const manager = require("./memberRoles/manager");
-const engineer = require("./memberRoles/engineer");
-const intern = require("./memberRoles/intern");
+const Employee = require("./memberRoles/employee");
+const Manager = require("./memberRoles/manager");
+const Engineer = require("./memberRoles/engineer");
+const Intern = require("./memberRoles/intern");
 
 function createTeamManager() {}
 
@@ -36,7 +36,14 @@ function createManager() {
       },
     ])
     .then((response) => {
-      console.log(response);
+      const { managerid, managername, managerEmail, officeNum } = response;
+      const manager = new Manager(
+        managerid,
+        managername,
+        managerEmail,
+        officeNum
+      );
+      console.log(manager);
     });
 }
 
