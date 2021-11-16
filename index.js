@@ -41,6 +41,8 @@ const createManager = () => {
         officeNum
       );
       console.log(manager);
+      teamMembers.unshift(manager);
+      console.log("manager added" + teamMembers);
     });
 };
 
@@ -80,6 +82,11 @@ const createIE = () => {
         message: "What is the intern's school",
         when: (input) => input.role === "Intern",
       },
+      {
+        type: "confirm",
+        name: "addMember",
+        message: "Add another team member?",
+      },
     ])
     .then((response) => {
       const { role, id, name, email, github, school } = response;
@@ -90,11 +97,12 @@ const createIE = () => {
         const employee = new Intern(id, name, email, school);
         console.log(employee);
       }
-      teamMembers.push(employee);
+      teamMembers.unshift(employee);
       console.log(teamMembers);
     });
 };
 
+//replaces the init function
 createManager()
   .then(createIE)
   .catch((err) => {
