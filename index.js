@@ -3,6 +3,7 @@ const inquirer = require("inquirer");
 const employee = require("./memberRoles/employee");
 const manager = require("./memberRoles/manager");
 const engineer = require("./memberRoles/engineer");
+const intern = require("./memberRoles/intern");
 
 var role = "";
 function createTeamManager() {}
