@@ -5,12 +5,6 @@ const Manager = require("./memberRoles/manager");
 const Engineer = require("./memberRoles/engineer");
 const Intern = require("./memberRoles/intern");
 
-function createTeamManager() {}
-
-function createEngineer() {}
-
-function createIntern() {}
-
 function createManager() {
   inquirer
     .prompt([
