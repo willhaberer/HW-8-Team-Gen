@@ -85,6 +85,7 @@ function createIE() {
         const employee = new Engineer(id, name, email, github);
       } else if (role === "Intern") {
         const employee = new Intern(id, name, email, school);
+        console.log(employee);
       }
       console.log(employee);
     });
