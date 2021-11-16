@@ -8,8 +8,8 @@ const Intern = require("./memberRoles/intern");
 //global variables
 const teamMembers = [];
 
-function createManager() {
-  inquirer
+const createManager = () => {
+  return inquirer
     .prompt([
       {
         type: "input",
@@ -42,9 +42,9 @@ function createManager() {
       );
       console.log(manager);
     });
-}
+};
 
-function createIE() {
+const createIE = () => {
   inquirer
     .prompt([
       {
@@ -90,13 +90,13 @@ function createIE() {
         const employee = new Intern(id, name, email, school);
         console.log(employee);
       }
-      teamMembers.unshift(employee);
+      teamMembers.push(employee);
       console.log(teamMembers);
     });
-}
+};
 
-function init() {
-  createIE();
-}
-
-init();
+createManager()
+  .then(createIE)
+  .catch((err) => {
+    console.log(err);
+  });
