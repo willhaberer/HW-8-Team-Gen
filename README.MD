@@ -20,8 +20,6 @@ Example Video: https://watch.screencastify.com/v/dBg754eSaMJaebS2tQqd
 
 This application was created by @willhaberer on Github.
 
-Code for licensing badges courtesy of @lukas-h on Github
-
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
