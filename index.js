@@ -89,7 +89,7 @@ const createIE = () => {
       },
     ])
     .then((response) => {
-      const { role, id, name, email, github, school } = response;
+      const { role, id, name, email, github, school, addMember } = response;
       let employee;
       if (role === "Engineer") {
         const employee = new Engineer(id, name, email, github);
@@ -98,7 +98,11 @@ const createIE = () => {
         console.log(employee);
       }
       teamMembers.unshift(employee);
-      console.log(teamMembers);
+      // console.log(teamMembers);
+
+      if (addMember === true) {
+        createIE();
+      } else return teamMembers;
     });
 };
 
