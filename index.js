@@ -5,6 +5,9 @@ const Manager = require("./memberRoles/manager");
 const Engineer = require("./memberRoles/engineer");
 const Intern = require("./memberRoles/intern");
 
+//global variables
+const teamMembers = [];
+
 function createManager() {
   inquirer
     .prompt([
@@ -87,7 +90,8 @@ function createIE() {
         const employee = new Intern(id, name, email, school);
         console.log(employee);
       }
-      console.log(employee);
+      teamMembers.unshift(employee);
+      console.log(teamMembers);
     });
 }
 
