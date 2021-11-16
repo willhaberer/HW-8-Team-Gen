@@ -1,6 +1,7 @@
 const fs = require("fs");
 const inquirer = require("inquirer");
 const employee = require("./memberRoles/employee");
+const manager = require("./memberRoles/manager");
 
 var role = "";
 function createTeamManager() {}
