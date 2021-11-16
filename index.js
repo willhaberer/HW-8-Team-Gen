@@ -29,6 +29,11 @@ function createManager() {
         message: "What is the manager's email?",
         name: "managerEmail",
       },
+      {
+        type: "input",
+        message: "What is the manager's office number?",
+        name: "officeNum",
+      },
     ])
     .then((response) => {
       console.log(response);
