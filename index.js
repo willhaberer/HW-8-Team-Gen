@@ -41,8 +41,19 @@ function createManager() {
     });
 }
 
+function createIE() {
+  inquirer.prompt([
+    {
+      type: "list",
+      message: "What is the employee's role?",
+      name: "role",
+      choices: ["Engineer", "Intern"],
+    },
+  ]);
+}
+
 function init() {
-  createManager();
+  createIE();
 }
 
 init();
