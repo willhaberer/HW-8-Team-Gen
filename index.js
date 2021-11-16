@@ -79,14 +79,12 @@ function createIE() {
       },
     ])
     .then((response) => {
-      const { role, id, name, emailmail, github, school } = response;
+      const { role, id, name, email, github, school } = response;
+      let employee;
       if (role === "Engineer") {
         const employee = new Engineer(id, name, email, github);
-      }
-      if (role === "Intern") {
-        const employee = new Engineer(id, name, email, intern);
-      } else {
-        let employee;
+      } else if (role === "Intern") {
+        const employee = new Intern(id, name, email, school);
       }
       console.log(employee);
     });
