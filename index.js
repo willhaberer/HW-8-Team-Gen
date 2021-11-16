@@ -42,29 +42,54 @@ function createManager() {
 }
 
 function createIE() {
-  inquirer.prompt([
-    {
-      type: "list",
-      message: "What is the employee's role?",
-      name: "role",
-      choices: ["Engineer", "Intern"],
-    },
-    {
-      type: "input",
-      name: "id",
-      message: "What is the employee's id?",
-    },
-    {
-      type: "input",
-      name: "name",
-      message: "What is the employee's name?",
-    },
-    {
-      type: "input",
-      name: "email",
-      message: "What is the employee's email?",
-    },
-  ]);
+  inquirer
+    .prompt([
+      {
+        type: "list",
+        message: "What is the employee's role?",
+        name: "role",
+        choices: ["Engineer", "Intern"],
+      },
+      {
+        type: "input",
+        name: "id",
+        message: "What is the employee's id?",
+      },
+      {
+        type: "input",
+        name: "name",
+        message: "What is the employee's name?",
+      },
+      {
+        type: "input",
+        name: "email",
+        message: "What is the employee's email?",
+      },
+      {
+        type: "input",
+        name: "github",
+        message: "What is the employee's github username.",
+        when: (input) => input.role === "Engineer",
+      },
+      {
+        type: "input",
+        name: "school",
+        message: "What is the intern's school",
+        when: (input) => input.role === "Intern",
+      },
+    ])
+    .then((response) => {
+      const { role, id, name, emailmail, github, school } = response;
+      if (role === "Engineer") {
+        const employee = new Engineer(id, name, email, github);
+      }
+      if (role === "Intern") {
+        const employee = new Engineer(id, name, email, intern);
+      } else {
+        let employee;
+      }
+      console.log(employee);
+    });
 }
 
 function init() {
