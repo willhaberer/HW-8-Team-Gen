@@ -5,14 +5,13 @@ const manager = require("./memberRoles/manager");
 const engineer = require("./memberRoles/engineer");
 const intern = require("./memberRoles/intern");
 
-var role = "";
 function createTeamManager() {}
 
 function createEngineer() {}
 
 function createIntern() {}
 
-function memberRole() {
+function createManager() {
   inquirer
     .prompt([
       {
@@ -25,15 +24,19 @@ function memberRole() {
         message: "What is the manager's employee ID?",
         name: "managerid",
       },
+      {
+        type: "input",
+        message: "What is the manager's email?",
+        name: "managerEmail",
+      },
     ])
     .then((response) => {
       console.log(response);
-      role = response.memberRole;
     });
 }
 
 function init() {
-  memberRole();
+  createManager();
 }
 
 init();
